@@ -2,6 +2,7 @@ listener.py
 main.py
 hangman.py
 izdelek.py
+*.txt
 
 # Created by .ignore support plugin (hsz.mobi)
 ### Python template
