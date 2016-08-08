@@ -11,5 +11,5 @@ def test_check_guess():
     assert check_guess("Ljubljana", "Slovenia", {"Slovenia": "Ljubljana"}) == True
     return "test_check_guess() passed successfully."
 
-print(testing_numbers_sum())
-print(test_check_guess())
+print testing_numbers_sum()
+print test_check_guess()

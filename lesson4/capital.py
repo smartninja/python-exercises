@@ -16,18 +16,18 @@ def main():
         if again == "no":
             break
 
-    print("END")
-    print("_________________________")
+    print "END"
+    print "_________________________"
 
 
 def check_guess(user_guess, country, cc_dict):
     capital = cc_dict[country]
 
     if user_guess == capital:
-        print("Correct! The capital of %s is indeed %s." % (country, capital))
+        print "Correct! The capital of %s is indeed %s." % (country, capital)
         return True
     else:
-        print("Sorry, you are wrong. The capital of %s is %s." % (country, capital))
+        print "Sorry, you are wrong. The capital of %s is %s." % (country, capital)
         return False
 
 if __name__ == "__main__":

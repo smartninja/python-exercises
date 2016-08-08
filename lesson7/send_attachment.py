@@ -38,11 +38,11 @@ def send_attachment_email(sender, senders_password, receiver, msg):
         server.sendmail(from_addr=sender, to_addrs=receiver, msg=msg.as_string())
 
         server.quit()
-        print("Email was successfully sent to {0}!".format(receiver))
-    except Exception, e:
-        print("Error!")
-        print(e)
+        print "Email was successfully sent to {0}!".format(receiver)
+    except Exception as e:
+        print "Error!"
+        print e
 
 if __name__ == "__main__":
     main()
-    print("END")
+    print "END"

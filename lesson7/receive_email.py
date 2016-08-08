@@ -24,14 +24,14 @@ def receive_email(your_email, your_password):
         for message_number in data[0].split():
             # important: this will mark your unread message as read!
             typ, data = server.fetch(message_number, "(RFC822)")  # get email via it's message number
-            print(data[0][1])
+            print data[0][1]
 
         server.close()
-        print("Email was successfully retrieved!")
-    except Exception, e:
-        print("Error!")
-        print(e)
+        print "Email was successfully retrieved!"
+    except Exception as e:
+        print "Error!"
+        print e
 
 if __name__ == "__main__":
     main()
-    print("END")
+    print "END"

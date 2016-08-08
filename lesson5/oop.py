@@ -1,8 +1,4 @@
 class Task:
-    name = "default name"
-    completed = False
-    due_date = "31-FEB-2000"
-
     def __init__(self, task_name, task_status, task_due_date):
         self.name = task_name
         self.completed = task_status
@@ -30,35 +26,35 @@ def main():
     elif action == "new":
         add_new_task(task_list)
     else:
-        print("Sorry, your input was incorrect. Please try again.")
+        print "Sorry, your input was incorrect. Please try again."
 
     save_changes(task_list, todo_file)
     todo_file.close()
 
 
 def list_of_tasks(tasks):
-    for item in tasks:
-        print("TASK: " + item.name)
-        print("Completed: " + item.completed)
-        print("Due date: " + item.due_date)
+    for index, item in enumerate(tasks):
+        print str(index) + ") TASK: " + item.name
+        print "Completed: " + item.completed
+        print "Due date: " + item.due_date
 
 
 def update_tasks(tasks):
-    for item in tasks:
-        print("TASK: " + item.name)
-        print("Completed: " + item.completed)
-        print("Due date: " + item.due_date)
+    list_of_tasks(tasks)
 
-        edit = raw_input("Would you like to edit this task? (yes/no) ")
+    task_index = int(raw_input("Enter the index number of the task you'd like to edit: "))
 
-        if edit == "yes":
-            new_name = raw_input("Enter new task name (press enter to skip): ")
+    task = tasks[task_index]
 
-            if new_name:  # this is example only for changing task name. Status and due date have the same logic.
-                item.name = new_name
-                print("Task name successfully changed")
-        else:
-            continue
+    print "You selected: "
+    print "TASK: " + task.name
+    print "Completed: " + task.completed
+    print "Due date: " + task.due_date
+
+    # this is example only for changing task name. Status and due date have the same logic.
+    new_name = raw_input("Enter new task name (press enter to skip): ")
+    task.name = new_name
+    print "Task name successfully changed"
 
 
 def add_new_task(tasks):
@@ -70,7 +66,7 @@ def add_new_task(tasks):
 
     tasks.append(new_task)
 
-    print("New task was successfully added!")
+    print "New task was successfully added!"
 
 
 def save_changes(tasks, todo_file):
@@ -80,9 +76,7 @@ def save_changes(tasks, todo_file):
     for item in tasks:
         todo_file.write(item.name + ";" + item.completed + ";" + item.due_date)
 
-    #todo_file.close()
-
 
 if __name__ == "__main__":
     main()
-    print("END")
+    print "END"
