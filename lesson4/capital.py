@@ -21,7 +21,7 @@ def main():
 
 
 def check_guess(user_guess, country, cc_dict):
-    capital = cc_dict[country]
+    capital = cc_dict.get(country)
 
     if user_guess == capital:
         print "Correct! The capital of %s is indeed %s." % (country, capital)
